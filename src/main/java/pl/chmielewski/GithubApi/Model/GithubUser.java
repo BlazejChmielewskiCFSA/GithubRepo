@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
         "twitter_username", "public_repos", "public_gists", "followers",
         "following", "created_at", "updated_at"
 })
-public record GitHubUser(
+public record GithubUser(
         @JsonProperty("login") String login,
         @JsonProperty("id") int id,
         @JsonProperty("node_id") String nodeId,
