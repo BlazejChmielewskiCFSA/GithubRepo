@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import pl.chmielewski.GithubApi.Model.GitHubUser;
+import pl.chmielewski.GithubApi.Model.GithubUser;
 import pl.chmielewski.GithubApi.Service.MainService;
 
 
@@ -18,8 +18,13 @@ public class RestApi {
         this.mainService = mainService;
     }
 
-    @GetMapping("/user")
-    public GitHubUser getUser(@RequestParam String username) {
+    @GetMapping("/test")
+    public GithubUser getUser(@RequestParam String username) {
         return mainService.getUsername(username);
+    }
+
+    @GetMapping("/user")
+    public String buildJSON(@RequestParam String username) {
+        return mainService.buildJSON(username);
     }
 }
